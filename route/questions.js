@@ -8,8 +8,8 @@ const mysql = require('mysql');
 var getConnection = ()=>{
     var connection = mysql.createConnection({
         host: 'localhost',
-        user: 'root',
-        password: '28041997',
+        user: 'username',
+        password: 'password',
         database: 'question'
     });
     connection.connect();
@@ -42,5 +42,9 @@ module.exports= {
         })
         connection.end();
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 6f9ac32de0690c34ea5112ab7d203947a8ac32ac

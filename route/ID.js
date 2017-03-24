@@ -19,9 +19,31 @@ var getConnection = ()=>{
 
 module.exports={
     showing:(cb)=>{
-        connection.query('SELECT * FROM users',(err, result,fields)=>{
+
+        var connection = getConnection();
+        let queryS = 'select * from users;';
+
+        connection.query(queryS, (err, result, fields)=>{
             if(err) throw err;
+            //
             cb(result);
+            console.log(result[0]);
         })
+        connection.end();
+
+    },
+
+    getLID: (a,b,c,cb)=>{
+         var connection = getConnection();
+         let queryS = 'insert into users (name, password, email)values("'+a+'","'+b+'","'+c+'")';
+
+         connection.query(queryS, (err, result, fields)=>{
+             if(err) throw err;
+
+             cb(result);
+             console.log(result[0]);
+         })
+        connection.end();
     }
+
 }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            background-color: black;
+            opacity: 0.5;
+            margin: -10px;
+        }
+        .for_background_opacity{
+            width:100%;
+            height: 680px;
+            background: url("imges/robots.jpeg");
+            background-size: cover;
+            z-index: -100;
+            position: absolute;
+        }
+        .content{
+            z-index: 1;
+            width:100%;
+            height: 680px;
+            position: absolute;
+        }
+        .sub-content{
+            z-index: 2;
+            position: absolute;
+            width:60%;
+            height: 450px;
+            background-color: lightslategray;
+            opacity: 0.77;
+            margin-left: 270px;
+            margin-top: 125px;
+        }
+        .subsub-content{
+            z-index: 3;
+            position: absolute;
+            width:730px;
+            height: 430px;
+            background-color: black;
+            opacity: 0.5;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .top-heads{
+            z-index: 8;
+            position: absolute;
+            width: 730px;
+            height: 70px;
+        }
+        .head1, .head2, .head3 {
+            width: 237.339px;
+            height: 50px;
+            background-color: darkslategray;
+            border: outset;
+            border-color: black;
+            float: left;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .top-heads div:hover{
+            background-color: black;
+            color: lightslategray;
+        }
+        .login{
+            z-index: 4;
+            position:absolute;
+            width: 530px;
+            height: 200px;
+            padding-top: 150px;
+            padding-left: 200px;
+            color: white;
+            display: none;
+        }
+        .signup{
+            z-index: 5;
+            position:absolute;
+            width: 530px;
+            height: 200px;
+            padding-top: 150px;
+            padding-left: 200px;
+            color: white;
+            display: none;
+        }
+        .aboutus{
+            z-index: 6;
+            position:absolute;
+            width: 530px;
+            height: 200px;
+            padding-top: 150px;
+            padding-left: 200px;
+            color: white;
+            display: none;
+        }
+        .welcome{
+            z-index: 7;
+            position:absolute;
+            width: 530px;
+            height: 200px;
+            padding-top: 150px;
+            padding-left: 200px;
+            color: white;
+            font-size: 50px;
+        }
+        div.head1:hover + div.login{
+            display: inline-block;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<div class="for_background_opacity"></div>
+<div class="content">
+    <div class="sub-content">
+        <div class="subsub-content">
+            <div class="top-heads">
+                <div class="head1">LOGIN</div>
+                <div class="head2">SIGNUP</div>
+                <div class="head3">ABOUT US</div>
+            </div>
+            <div class="login">
+                NAME: <span style="display:inline-block; width: 50px;"></span><input type="text" class="lna">
+                <pre>
+
+
+                </pre>
+                PASSWORD:<span style="display:inline-block; width: 10px;"></span> <input type="password" class="lpa">
+                <pre>
+                </pre>
+                <button id="b1" style="margin-left: 100px">Login</button>
+            </div>
+            <div class="signup">
+                NAME: <span style="display:inline-block; width: 130px;"></span><input type="text" class="sna">
+                <pre>
+                </pre>
+                PASSWORD:<span style="display:inline-block; width: 90px;"></span> <input type="password" class="spa">
+                <pre>
+                </pre>
+                CONFIRM PASSWORD:<span style="display:inline-block; width: 10px;"></span> <input type="password">
+                <pre>
+                </pre>
+                EMAIL:<span style="display:inline-block; width: 125px;"></span> <input type="email" class="sem">
+                <pre>
+                </pre>
+                <button id="b2" style="margin-left: 100px">Sign Up</button>
+            </div>
+            <div class="aboutus">
+                BLAH BLAH!!
+            </div>
+            <div class="welcome">
+                WELCOME TO
+                <br>
+                CODEFART!!!
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+<!--see how to create multiple pages within the same page upon hovering-->

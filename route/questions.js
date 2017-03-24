@@ -16,13 +16,16 @@ var getConnection = ()=>{
     return connection;
 };
 
-let query1 = 'UPDATE questions SET color="black "';
-let query2 = 'UPDATE questions SET color="green" WHERE QID=(SELECT QID FROM Attempted WHERE LID="'+lid +'" AND CI="1")';
-let query3 = 'UPDATE questions SET color="red" WHERE QID=(SELECT QID FROM Attempted WHERE LID="'+lid +'"  AND CI="0")';
-let query4 = 'SELECT * FROM questions';
 
 module.exports= {
     display: (lid, cb) => {
+        var connection = getConnection();
+
+        let query1 = 'UPDATE questions SET color="black "';
+        let query2 = 'UPDATE questions SET color="green" WHERE QID=(SELECT QID FROM Attempted WHERE LID="'+lid +'" AND CI="1")';
+        let query3 = 'UPDATE questions SET color="red" WHERE QID=(SELECT QID FROM Attempted WHERE LID="'+lid +'"  AND CI="0")';
+        let query4 = 'SELECT * FROM questions';
+
 
         connection.query(query1, (err, result, fields) => {
             if (err) throw err;
@@ -37,5 +40,7 @@ module.exports= {
             if (err) throw err;
             cb(result);
         })
+        connection.end();
     }
+
 }

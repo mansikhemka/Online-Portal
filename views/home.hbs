@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Codefart</title>
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/home.js"></script>
+</head>
+<body>
+<div class="questionspage">
+    {{#each question}}
+        <div id="inserthere">
+
+            <table>
+
+                <tr value="{{QID}}">
+
+                    <td>
+                        <!--<a href="/{{QID}}" class="ques">-->
+                            <!--<span style="display:none">{{QID}}</span>-->
+                        <!--</a>-->
+                        {{qname}}
+                    </td>
+
+                    <td>
+                        {{Rate}}
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+    {{/each}}
+</div>
+</body>
+</html>

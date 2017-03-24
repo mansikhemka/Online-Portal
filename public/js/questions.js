@@ -8,6 +8,6 @@ $(function(){
 
 function showview(){
     $.get('/quesfetch',function(result){
-
+        console.log(result);
     })
 }

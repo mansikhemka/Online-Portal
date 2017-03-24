@@ -31,18 +31,9 @@ $(function(){
         console.log(name);
         console.log(pass);
 
-        $.get('/isuserthere',(data)=>{
-            var y=0;
-            for(var i=0;i<data.length;i++){
-                if(data[i].name==name && data[i].pass==pass){
-                   y=1;
-                   break;
-                }
-            }
-            if(y==1){
-                console.log("logged in");
-                //login
-            }
+    $.post('/isuserthere',{name:name, pass:pass},(data)=>{
+        localStorage.setItem('name', JSON.stringify(name));
+            console.log(data);
         })
     });
 
@@ -51,8 +42,8 @@ $(function(){
         pass = $('.spa').val();
         email = $('.sem').val();
 
-        $.post('/setuser',{name:name, pass:pass},(result)=>{
-            console.log(result);
+        $.post('/setuser',{name:name, pass:pass, email:email},(result)=>{
+            console.log("ALL SET TO GO!");
         })
     })
 
